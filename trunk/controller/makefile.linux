@@ -1,0 +1,23 @@
+C_OPT=-c -O2 -Wall -DOS_LINUX
+L_OPT=-O2
+
+all: RLctrl
+	@
+
+RLctrl: Controller.o SocketBuf.o Dump.o
+	@gcc $(L_OPT) -o $@ $?
+
+Controller.o: Controller.c
+	@gcc $(C_OPT) $?
+
+SocketBuf.o: SocketBuf.c
+	@gcc $(C_OPT) $?
+
+Dump.o: Dump.c
+	@gcc $(C_OPT) $?
+
+clean:
+	@rm -f *.o RLctrl
+
+clear:
+	@rm -f *.o
