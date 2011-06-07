@@ -1,0 +1,23 @@
+C_OPT=-c -O2 -Wall -DOS_LINUX
+L_OPT=-O2 -shared -fPIC
+
+all: RLdb.so
+	@
+
+RLdb.so: Debugger.o Protocol.o SocketBuf.o
+	@gcc $(L_OPT) -o $@ $? -llua
+
+Debugger.o: Debugger.c
+	@gcc $(C_OPT) $?
+
+Protocol.o: Protocol.c
+	@gcc $(C_OPT) $?
+
+SocketBuf.o: SocketBuf.c
+	@gcc $(C_OPT) $?
+
+clean:
+	@rm -f *.o RLdb.so
+
+clear:
+	@rm -f *.o
