@@ -1,0 +1,1 @@
+This is a remote Lua debugger in C, using socket. It now has only a console interface, but it's not hard to make a GUI for it. Also, it can be used as a demo and/or a good start point for a more powerful yet friendly debugger(hopefully with a GUI). See https://sites.google.com/site/louirobert/Debuggers/remote-debugger-based-on-socket for usage.
